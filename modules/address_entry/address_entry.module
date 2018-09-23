@@ -7,3 +7,8 @@
 /**
  * Implements hook_entity_type_build().
  */
+
+
+function address_entry_page_attachments(array &$attachments) {
+    $attachments['#attached']['library'][] = 'address_entry/address_entry';
+}

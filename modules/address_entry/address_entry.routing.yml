@@ -48,6 +48,13 @@ entity.address_term.delete_form:
   requirements:
     _entity_access: 'address_term.delete'
 
+entity.address_term.search:
+  path: '/addressbook/search'
+  defaults:
+    _controller: 'Drupal\address_entry\Controller\AddressBookSearchController::searchTerm'
+  requirements:
+    _permission: 'access content'
+
 entity.address.term_settings:
   path: 'admin/structure/address_term_settings'
   defaults:

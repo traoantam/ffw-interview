@@ -1,0 +1,10 @@
+address_entry:
+  version: 1.x
+  css:
+    theme:
+        css/address_entry.css: {}
+    js:
+  js:
+    js/address_entry.js: {}
+  dependencies:
+    - core/jquery

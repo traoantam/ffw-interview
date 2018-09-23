@@ -65,21 +65,30 @@ class TermListBuilder extends EntityListBuilder {
    * buildHeader() and buildRow() implementations.
    */
   public function render() {
-//    $entity = TermForm::class;
-//    $form = \Drupal::formBuilder()->getForm($entity);
-//    $form['search_address']['name'] = array(
-//        '#type' => 'textfield',
-//        '#title' => t('Name'),
-//        '#default_value' => '',
-//    );
-//    $form['search_address']['submit'] = array(
-//      '#type' => 'submit',
-//      '#value' => t('Search'),
-//      '#prefix' => '<div class="action">',
-//      '#suffix' => '</div>',
-//      '#weight' => 100,
-//    );
-
+    $form['search_address']['#prefix'] = '<div class="search-address-book-form">';
+    $form['search_address']['name'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Name'),
+        '#default_value' => '',
+        '#prefix' => '<div class="js-search-name form--inline">',
+        '#suffix' => '</div>',
+    );
+    $form['search_address']['email'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Email'),
+      '#default_value' => '',
+      '#prefix' => '<div class="js-search-email form--inline">',
+      '#suffix' => '</div>',
+    );
+    $form['search_address']['submit'] = array(
+      '#type' => 'submit',
+      '#value' => t('Search'),
+      '#prefix' => '<div class="action form--inline">',
+      '#suffix' => '</div>',
+      '#weight' => 100,
+    );
+    $form['search_address']['#suffix'] = '</div>';
+    $build['form'] = $form;
     $build['table'] = parent::render();
     return $build;
   }
