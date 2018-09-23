@@ -1,0 +1,13 @@
+.search-address-book-form .form--inline {
+    display: inline-block;
+    width: 250px;
+}
+
+.search-address-book-form .form--inline input[type="text"] {
+    width: 100%;
+}
+
+.search-address-book-form .form--inline.action {
+    vertical-align: top;
+    margin-top: 34px;
+}
