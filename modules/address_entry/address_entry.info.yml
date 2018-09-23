@@ -1,0 +1,5 @@
+name: address_entry
+type: module
+description: Address Entity
+core: 8.x
+package: Application

@@ -1,0 +1,9 @@
+<?php
+
+/**
+ * @file
+ * Contains findict_translator.module..
+ */
+/**
+ * Implements hook_entity_type_build().
+ */

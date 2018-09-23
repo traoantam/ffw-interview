@@ -1,0 +1,13 @@
+# Define the menu links for this module
+
+entity.address_term.collection:
+  title: 'Content Entity Address Listing'
+  route_name: entity.address_term.collection
+  description: 'List terms'
+  weight: 10
+entity.address_term.admin.structure.settings:
+  title: term Settings
+  description: 'Configure term entity'
+  route_name:  entity.address.term_settings
+  parent: system.admin_structure
+

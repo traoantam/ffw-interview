@@ -1,0 +1,57 @@
+# This file brings everything together. Very nifty!
+
+# Route name can be used in sevaral place (links, redirects, local actions etc.)
+entity.address_term.canonical:
+  path: '/addressbook/{address_term}'
+  defaults:
+  # Calls the view controller, defined in the annotation of the address_term entity
+    _entity_view: 'address_term'
+    _title: 'Address Content'
+  requirements:
+  # Calls the access controller of the entity, $operation 'view'
+    _entity_access: 'address_term.view'
+
+entity.address_term.collection:
+  path: '/addressbook/manage'
+  defaults:
+  # Calls the list controller, defined in the annotation of the address_term entity.
+    _entity_list: 'address_term'
+    _title: 'Address List'
+  requirements:
+  # Checks for permission directly.
+    _permission: 'view address_term entity'
+
+entity.address.term_add:
+  path: '/addressbook/add'
+  defaults:
+  # Calls the form.add controller, defined in the address_term entity.
+    _entity_form: address_term.add
+    _title: 'Add Address'
+  requirements:
+    _entity_create_access: 'address_term'
+
+entity.address_term.edit_form:
+  path: '/addressbook/{address_term}/edit'
+  defaults:
+  # Calls the form.edit controller, defined in the address_term entity.
+    _entity_form: address_term.edit
+    _title: 'Edit Address'
+  requirements:
+    _entity_access: 'address_term.edit'
+
+entity.address_term.delete_form:
+  path: '/addressbook/{address_term}/delete'
+  defaults:
+    # Calls the form.delete controller, defined in the address_term entity.
+    _entity_form: address_term.delete
+    _title: 'Delete Address'
+  requirements:
+    _entity_access: 'address_term.delete'
+
+entity.address.term_settings:
+  path: 'admin/structure/address_term_settings'
+  defaults:
+    _form: '\Drupal\address_entry\Form\TermSettingsForm'
+    _title: 'Address Settings'
+  requirements:
+    _permission: 'administer address_term entity'

@@ -1,0 +1,12 @@
+'delete address_term entity':
+  title: Delete term entity content.
+'add address_term entity':
+  title: Add term entity content
+'view address_term entity':
+  title: View term entity content
+'edit address_term entity':
+  title: Edit term entity content
+'administer address_term entity':
+  title: Administer term  settings
+
+
