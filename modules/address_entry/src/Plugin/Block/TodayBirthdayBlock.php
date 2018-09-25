@@ -3,6 +3,7 @@
 namespace Drupal\address_entry\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Cache\Cache;
 
 /**
  * Provides a 'Today Birthdays From' Block
@@ -28,7 +29,12 @@ class TodayBirthdayBlock extends BlockBase {
       }else {
           $build['today_birthday_block']['#markup'] = "Today is Birthday: not persons";
       }
-
       return $build;
   }
+    /**
+     * {@inheritdoc}
+     */
+    public function getCacheMaxAge() {
+        return 0;
+    }
 }
